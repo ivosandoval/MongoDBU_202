@@ -1,13 +1,12 @@
-MMS: Agent best practices
-=========================
+# MMS: Agent best practices
 
 How many MMS monitoring agents should you run for a production system?
 
     More than 1 
 
+----
 
-MMS: Understanding ulimits
-==========================
+# MMS: Understanding ulimits
 
 What is typically the cause of a low ulimit warning in MMS monitoring?
 
