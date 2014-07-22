@@ -10,4 +10,4 @@ When there is enough data for you to determine an answer, insert a document into
 
 The value for the answer field in this document should be the number of inserts per second for your host. Please be aware that your answer may not be the same as that for other students. Validation for this problem accounts for such differences. 
 
-    10.85
+    db.answers.insert({'homework':'homework_1.2', 'answer':11})
