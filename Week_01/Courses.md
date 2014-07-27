@@ -56,4 +56,58 @@ sudo service munin-node start
 
 ----
 
-# MMS: Building a dashboard
+# MMS: State transitions in replica sets
+
+Purple bar = Le serveur devient un primaire  
+Yellow bar = Le serveur devient un secondaire  
+Red bar = Redemarrage
+
+----
+
+# MMS: Replication lag and opcounters
+
+opcounters
+opcounters repl
+repl lag
+replication oplog window = le temps max avant une resynchro complète
+
+----
+
+# MMS: The effect of replication on opcounters
+
+	db.coll.remove({}) = 1 delete op se multiplie suivant le nombre de documents à supprimer
+
+Il n'y a pas de relation directe entre les op et les op répliquées mais ça peut indiquer ce qui se passer en réalité (1 opération se répliquant un certain nombre de fois à cause des documents)
+
+----
+
+# MMS: Alert configuration basics
+
+http://www.mongodb.com/blog/post/five-mms-monitoring-alerts-keep-your-mongodb-deployment-track
+
+----
+
+# mongostat HOWTO
+
+## Pourquoi l'utiliser ?
+Pour la fréquence de requêtage et les infos en temps réel
+
+## Désavantages
+* Lancement manuel
+* Dur à déchiffrer
+* Difficile de repérer des tendances
+
+----
+
+# Interpreting mongostat output
+
+----
+
+# netstat and iostat
+
+----
+
+# db.serverStatus
+
+Il résume une grosse partie des compteurs qui sont récupérés dans MMS  
+Il indique également si le serveur est lent avec une ensemble de métriques réduit qui peut permettre de déterminer le moment du ralentissement
