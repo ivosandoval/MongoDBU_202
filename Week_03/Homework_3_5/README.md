@@ -2,7 +2,9 @@ This problem will be a hands-on implementation of the last problem.
 
 The backupDB database has one collection, backupColl. At midnight every night, the system is backed up with a mongodump. Your server continued taking writes for a few hours, until 02:46:39. At that point, someone (not you) ran the command:
 
+```javascript
 > db.backupColl.drop()
+```
 
 Your job is to put your database back into the state it was in immediately before the database was dropped, then use MongoProc to verify that you have done it correctly.
 
@@ -12,7 +14,6 @@ Use MongoProc to evaluate your solution. You can verify that your database is in
 
 This assignment is fairly tricky so you may want to check this stackoverflow question and answer.
 
-Tip: You may not need this, but if you are interested in updating an oplog's 'op' field for a document, it will complain if you increase the size the document (which it thinks is happening as an intermediate stage of an update), but you can do it anyway by simultaneously unsetting another field. For example, db.oplog.rs.update( { query }, { $set : { "op" : "c" }, $unset : { "o" : 1 } } ). 
+Tip: You may not need this, but if you are interested in updating an oplog's 'op' field for a document, it will complain if you increase the size the document (which it thinks is happening as an intermediate stage of an update), but you can do it anyway by simultaneously unsetting another field. For example, db.oplog.rs.update( { query }, { $set : { "op" : "c" }, $unset : { "o" : 1 } } ).
 
 ----
-
