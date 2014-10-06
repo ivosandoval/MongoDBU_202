@@ -1,3 +1,9 @@
+1. Welcome to the class
+2. Intro to M202
+3. Spinning Up a VM with Vagrant (Unix)
+4. Spinning Up a VM with Vagrant (Windows)
+
+
 # MMS: Understanding ulimits
 
 L'alerte **low ulimit** vient dune limitation trop restrictive du système qui se configure via ulimits.  
